@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TRACESCFEED</title>
+
+  
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --main-bg: #340910;
+      --sidebar-bg: #290a0f;
+      --sidebar-dark: #21080b;
+      --accent: #58111d;
+      --highlight: #5a0d12;
+      --divider: #2d0b0e;
+      --white: #ffffff;
+      --muted: #d9d2d2;
+      --newpost-red: #570f1b;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; }
+    body {
+      font-family: "Poppins", sans-serif;
+      background: var(--main-bg);
+      color: var(--white);
+      display: flex;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+
+    
+    .sidebar {
+      width: 200px;
+      background: linear-gradient(180deg, var(--sidebar-bg), var(--sidebar-dark));
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-right: 1px solid var(--divider);
+      padding: 10px 8px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px;
+      margin-bottom: 10px;
+    }
+    .brand .iconBox {
+      width: 32px; height: 32px;
+      display: grid; place-items: center;
+      border-radius: 8px;
+      border: 1px solid rgba(255,90,110,0.2);
+      color: var(--newpost-red);
+      font-size: 13px;
+    }
+    .brand .title {
+      font-weight: 800;
+      font-family: "Montserrat", sans-serif;
+      font-size: 14px;
+    }
+
+    .top-pills {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+
+    .pill {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 10px;
+      border-radius: 6px;
+      font-size: 13px;
+      cursor: pointer;
+    }
+    .pill.home { background: var(--highlight); }
+    .pill.newpost {
+      background: var(--white);
+      color: var(--newpost-red);
+      font-weight: 600;
+    }
+    .pill.newpost .circle {
+      width: 18px; height: 18px; border-radius: 50%;
+      display: grid; place-items: center;
+      border: 1px solid var(--newpost-red);
+      font-size: 11px;
+    }
+
+    .menu {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      font-size: 13px;
+    }
+    .menu .item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 8px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .menu .item i { width: 18px; text-align: center; }
+    .menu .item:hover { background: var(--sidebar-bg); }
+
+    .side-bottom {
+      border-top: 1px solid var(--divider);
+      padding-top: 8px;
+      margin-top: 8px;
+    }
+    .about-row {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 12px; color: var(--muted);
+      padding: 6px 4px;
+      cursor: pointer;
+    }
+
+    
+    .main {
+      flex: 1;
+      position: relative;
+      padding: 0;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .main-top {
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding: 0 12px;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+    .main-top .left-title { 
+      font-weight: 600; 
+      font-size: 16px;
+    }
+    .main-top .right-icons { 
+      display: flex; 
+      gap: 20px;
+    }
+    .main-top .right-icons i { 
+      cursor: pointer; 
+      font-size: 22px;
+    }
+
+    iframe {
+      flex: 1;
+      border: none;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <aside class="sidebar">
+    <div>
+      <div class="brand">
+        <div class="iconBox"><i class="fa-solid fa-pen"></i></div>
+        <div class="title">TRACESCFEED</div>
+      </div>
+
+      <div class="top-pills">
+        <div class="pill home" onclick="loadPage('home.html','Home')"><i class="fa-solid fa-house"></i> Home</div>
+        <div class="pill newpost" onclick="loadPage('newpost.html','New Post')">
+          <div class="circle"><i class="fa-solid fa-plus"></i></div> New Post
+        </div>
+      </div>
+
+      <nav class="menu">
+        <div class="item" onclick="loadPage('school.html','School')"><i class="fa-solid fa-school"></i> School</div>
+        <div class="item" onclick="loadPage('events.html','Events')"><i class="fa-solid fa-calendar-days"></i> Events</div>
+        <div class="item" onclick="loadPage('office.html','Office')"><i class="fa-solid fa-briefcase"></i> Office</div>
+        <div class="item" onclick="loadPage('teachers.html','Teachers')"><i class="fa-solid fa-user-tie"></i> Teachers</div>
+        <div class="item" onclick="loadPage('staff.html','Staff')"><i class="fa-solid fa-users"></i> Staff</div>
+        <div class="item" onclick="loadPage('students.html','Students')"><i class="fa-solid fa-graduation-cap"></i> Students</div>
+      </nav>
+    </div>
+
+    <div class="side-bottom">
+      <div class="about-row" onclick="loadPage('about.html','About')">
+        <i class="fa-regular fa-circle-info"></i> About
+      </div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="main-top">
+      <div class="left-title" id="pageTitle">Home</div>
+      <div class="right-icons">
+        <i class="fa-regular fa-user"></i>
+        <i class="fa-regular fa-rectangle-list"></i>
+        <i class="fa-regular fa-bell"></i>
+        <i class="fa-solid fa-right-from-bracket"></i>
+      </div>
+    </div>
+
+    
+    <iframe id="contentFrame" src="home.html"></iframe>
+  </main>
+
+  <script>
+    function loadPage(page, title) {
+      document.getElementById("contentFrame").src = page;
+      document.getElementById("pageTitle").innerText = title;
+    }
+  </script>
+</body>
+</html>

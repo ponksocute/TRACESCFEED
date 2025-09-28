@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Home</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden; 
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #1a0508, #290a0f, #0f0304);
+      color: white;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      padding: 40px;
+      gap: 60px;
+      box-sizing: border-box;
+      position: relative;
+    }
+
+   
+    .text-section {
+      flex: 0 0 45%;
+      max-width: 700px;
+      z-index: 2;
+    }
+
+    .welcome {
+      color: #ff6b6b;
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      margin-bottom: 16px;
+    }
+
+    .title {
+      font-family: "Montserrat", sans-serif;
+      font-size: 64px;
+      font-weight: 900;
+      margin-bottom: 20px;
+      line-height: 1.05;
+      background: linear-gradient(90deg, #ff4d6d, #ff944d);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .description {
+      font-size: 18px;
+      line-height: 1.7;
+      color: #e0e0e0;
+    }
+
+   
+    .cta-btn {
+      margin-top: 25px;
+      background: #ff4d6d;
+      border: none;
+      padding: 14px 32px;
+      border-radius: 30px;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+      color: white;
+      transition: 0.3s;
+    }
+    .cta-btn:hover {
+      background: #ff2e55;
+      box-shadow: 0 0 20px #ff4d6d;
+    }
+
+    
+    .logo-section {
+      flex: 0 0 45%;
+      max-width: 900px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 2;
+    }
+    .logo-section img {
+      display: block;
+      width: min(60vw, 900px);
+      max-width: 100%;
+      height: auto;
+    }
+
+  
+    .circle {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.05);
+      z-index: 1;
+      pointer-events: none;
+      animation: float 8s ease-in-out infinite;
+    }
+    .circle.small { width: 200px; height: 200px; top: 40px; left: 40px; animation-duration: 6s; }
+    .circle.medium { width: 350px; height: 350px; bottom: 80px; right: 200px; animation-duration: 9s; }
+    .circle.large { width: 600px; height: 600px; bottom: -150px; right: -150px; animation-duration: 12s; }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-25px); }
+      100% { transform: translateY(0px); }
+    }
+
+   
+    @media (max-width: 900px) {
+      .container { flex-direction: column; gap: 30px; padding: 20px; }
+      .text-section { flex: 0 0 100%; max-width: 100%; }
+      .title { font-size: 44px; }
+      .logo-section { flex: 0 0 100%; max-width: 100%; }
+      .logo-section img { width: min(80vw, 700px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+  
+    <div class="circle small"></div>
+    <div class="circle medium"></div>
+    <div class="circle large"></div>
+
+    
+    <div class="text-section">
+      <div class="welcome">WELCOME TO</div>
+      <div class="title">TRACESCFEED</div>
+      <div class="description">
+        Got a concern or idea? Share your feedback here—quick, easy, and anonymous.
+        Whether it’s about classes, events, or facilities, your voice matters.
+        You can even message a specific teacher or staff member.
+        Let’s make our school better, together.
+      </div>
+      <button class="cta-btn">Give Feedback</button>
+    </div>
+
+   
+    <div class="logo-section">
+      <img src="https://scontent.fmnl4-2.fna.fbcdn.net/v/t1.15752-9/551775840_782610807825144_4429574881678883381_n.png?stp=dst-png_s2048x2048&_nc_cat=105&ccb=1-7&_nc_sid=9f807c&_nc_ohc=cLrIkbilBKQQ7kNvwFKsS3O&_nc_oc=AdkFW5SA5nLk9hPEQ8VxeqRNwz28axG3Hcbww--Y62Lh0byH0t17VZf8FzBv2SX77KUXmJUruBLONAesmMF7LRqR&_nc_zt=23&_nc_ht=scontent.fmnl4-2.fna&oh=03_Q7cD3QFAGhf3a6yF-NC4o49nHqpXguW2adzDRUAl2x7pGgyRzA&oe=68FDC644" alt="TRACESCFEED Logo">
+    </div>
+  </div>
+</body>
+</html>

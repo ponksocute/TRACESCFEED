@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Office Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: #340910;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    h1 {
+      font-family: "Montserrat", sans-serif;
+      font-size: 60px;
+      font-weight: 900;
+      margin-bottom: 20px;
+      z-index: 1;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #d9cfcf;
+      max-width: 600px;
+      z-index: 1;
+    }
+
+    /* Shapes */
+    .shape {
+      position: absolute;
+      background: #58111d;
+      opacity: 0.5;
+      z-index: 0;
+    }
+    .shape.left-top {
+      left: 60px; top: 60px;
+      width: 120px; height: 120px;
+      border-radius: 50% 0 50% 0;
+    }
+    .shape.mid {
+      right: 300px; top: 180px;
+      width: 120px; height: 120px;
+      border-radius: 50%;
+    }
+    .shape.big-right {
+      right: -30px; bottom: -30px;
+      width: 280px; height: 280px;
+      border-radius: 50% 50% 0 50%;
+    }
+  </style>
+</head>
+<body>
+  <div class="shape left-top"></div>
+  <div class="shape mid"></div>
+  <div class="shape big-right"></div>
+
+  <h1>Office Page</h1>
+  <p>Here you can view office staff, roles, updates, and important announcements.</p>
+</body>
+</html>
